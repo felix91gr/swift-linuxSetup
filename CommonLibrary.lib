@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function set-title() {
+    echo -e "\033]0;$@\007" 
+}
+
+function pause(){
+   read -p "$*"
+}
+
