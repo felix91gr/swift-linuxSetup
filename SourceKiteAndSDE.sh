@@ -1,4 +1,5 @@
 #!/bin/bash
+. ./CommonLibrary.lib
 
 set-title '(1 / ) Cloning the Source Kite repository...'
 

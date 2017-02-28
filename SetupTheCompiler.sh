@@ -20,14 +20,21 @@ cd swift-source
 
 set-title '(3 / 5) Cloning relevant repositories'
 
-git clone https://github.com/apple/swift.git
+git clone --verbose --branch swift-DEVELOPMENT-SNAPSHOT-2017-02-24-a https://github.com/apple/swift.git
 ./swift/utils/update-checkout --clone
 
 set-title '(4 / 5) Building the compiler'
 
-sudo swift/utils/build-script --preset=jin -v
+sudo swift/utils/build-script --preset=jin
 
-pause 'Compiler built. Next step: making symlinks. Press [ENTER] to continue.
+if [ $? -eq 0 ]; then
+    echo 'Compiler built successfully'
+else
+    echo 'Failed to build compiler. Installation will stop here.'
+    exit 1
+fi
+
+pause 'Compiler built. Next step: making symlinks. Press [ENTER] to continue.'
 
 set-title '(5 / 5) Making symbolic links'
 
