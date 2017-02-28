@@ -28,7 +28,6 @@ sudo apt-get install code
 
 set-title '(4 / ) Installing SDE for VSCode'
 
-# We have to build the extension, because Swift's ABI hasn't stabilized yet
-cd ..
-git clone https://github.com/jinmingjian/sde.git
+echo 'Install SDE as it-s shown in the README:'
+echo https://github.com/jinmingjian/sde
 
