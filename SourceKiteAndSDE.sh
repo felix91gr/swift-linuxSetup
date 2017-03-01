@@ -6,10 +6,14 @@ set-title '(1 / ) Cloning the Source Kite repository...'
 git clone https://github.com/jinmingjian/sourcekite.git
 cd sourcekite/
 
+pause 'Compile Source Kite? Press Ctrl+C to cancel, ENTER to continue'
+
 set-title '(2 / ) Compiling Source Kite...'
 
 sudo ln -sf /usr/lib/sourcekitdInProc.framework/sourcekitdInProc /usr/lib/sourcekitdInProc
 swift build -Xlinker -l:sourcekitdInProc
+
+pause 'Install VSCode? Press Ctrl+C to cancel, ENTER to continue'
 
 set-title '(3 / ) Installing VSCode'
 
