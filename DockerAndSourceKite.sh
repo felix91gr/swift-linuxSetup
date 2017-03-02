@@ -12,7 +12,6 @@ sudo apt-get install -y --no-install-recommends \
 sudo apt-get install -y --no-install-recommends \
 			apt-transport-https \
 			ca-certificates \
-			curl \
 			software-properties-common
 
 curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add -
@@ -30,11 +29,17 @@ sudo apt-get -y install docker-engine
 
 # Checking that Docker is installed correctly
 
+echo \
+'We are gonna run the Docker hello-world.\n \
+If it runs, then docker was installed successfully'
 sudo docker run hello-world
 
 sudo groupadd docker
 
 sudo usermod -aG docker $USER
+
+echo 'You should now be able to run docker commands \n\
+without the sudo keyword.'
 
 echo 'Now log out and log back in, to reflect the changes in your user privileges'
 

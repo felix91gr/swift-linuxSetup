@@ -3,9 +3,6 @@
 
 set-title '(1 / 1) Installing VSCode'
 
-# Prereq: curl
-sudo apt install curl
-
 # Install key
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg

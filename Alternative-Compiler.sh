@@ -20,7 +20,7 @@ rm -rf $TARNAME.tar.gz
 
 PATHTOSWIFT=$(pwd)/$FOLDERNAME/usr/bin
 
-echo Path to Swift: $PATHTOSWIFT
+echo Path to Swift toolkit: $PATHTOSWIFT
 
 hash swift 2>/dev/null || { 
   echo 'Could not find Swift Toolkit. Setting it in PATH...'
@@ -33,5 +33,5 @@ echo 'Now setting up links to the libraries'
 PATHTOLIBS=$(pwd)/$FOLDERNAME/usr/lib/swift/linux
 
 sudo rm /etc/ld.so.conf.d/swift123.conf
-echo $PATHTOLIBS
+echo 'Adding '$PATHTOLIBS' to the library directory index, at: /etc/ld.so.conf.d/swift123.conf'
 echo $PATHTOLIBS | sudo tee -a /etc/ld.so.conf.d/swift123.conf
