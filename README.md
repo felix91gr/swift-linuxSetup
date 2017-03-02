@@ -1,8 +1,6 @@
 # Swift@Linux Setup
 _Shell Scripts and instructions on how to set up Swift on Linux._
 
-**TODO: proofreading.**
-
 Follow the Steps:
 
 ## 0) Pre-requisites 
