@@ -101,7 +101,7 @@ But for this tutorial, we'll use a docker image of Source Kite that Jin made ava
 ./SourceKiteFromDocker.sh
 ```
 
-### 3.3) VSCode and SDE
+### 3.3) Install VSCode and SDE
 
 We're almost there! All that is left of the scripts is to set up apt-get to download and update VSCode from the repositories (thanks to [these people](link)). After that, you'll only have to download and configure the SDE plugin in VSCode
 
@@ -111,18 +111,76 @@ For VSCode, run:
 ./InstallVSCode.sh
 ```
 
-#### AQUI QUEDÉ. FALTA:
+After installing it, open VSCode.
 
-* INSTALACIÓN DE SDE EN VSCODE
-* CONFIGURACIÓN DE SDE PARA QUE USE SOURCEKITE DESDE DOCKER
-* CONFIGURACIÓN DE LA OTRA WEA DE SDE PARA QUE USE EL SWIFT COMPILER
-* CREACIÓN DE UN COMANDO DE SWIFT BUILD PARA QUE VSCODE COMPILE
-* MINI TUTORIAL CON EL PROYECTO DE EJEMPLO DE JIN.
+![vscodeFromLauncher](assets/VSCode_before.png)
 
-### Fourth: run `SourceKiteAndSDE.sh`
+Click in extensions:
 
-_It will download and build the last piece required for SDE to work: **sourcekite**_
+![]()
 
-## Alternative Setup
+Search for "sde" and install it:
 
-You can replace the third step by using the script `AlternativeCompiler.sh`. That will download ready-to-use binaries from one of the latest snapshopts of **Swift 3.1**
+![]()
+
+And click "Reload" to reload the current window and activate SDE.
+
+That's it! Now all that is left is to configure SDE for our setup, and you'll have a working Swift IDE!
+
+## 4) Configuration of SDE
+
+We have to tell SDE two things:
+
+* That we are using Source Kite from Docker
+* Where is the swift compiler binary located
+
+To do so, in VSCode go to: File => Preferences => Settings. This will open up an empty JSON file:
+
+![User Settings img](bleh)
+
+Inside the brackets, insert the following: *(replace as needed for your folders)*
+
+```json
+    "swift.path.sourcekiteDockerMode":true,
+    "swift.path.swift_driver_bin":"/home/felix/swift-linuxSetup/swift-binaries/usr/bin/swift"
+```
+
+After that, save it (Ctrl + S) and close it.
+
+## \*) Test it!
+
+Let's try SDE! You can use your own project, or the [example project](https://github.com/jinmingjian/sde-demos) provided by Jin for SDE.
+
+* Open the folder in VSCode: File => Open Folder
+
+* Open one of the sources and make an edit. Save it.
+
+* Start a build process (Alt + B). It may take a while.
+
+* After the first build, SDE will understand your project well. Type and enjoy!
+
+![Gif of awesome SDE]()
+
+# Afterwords
+
+## More details on how to start with SDE
+
+[Go here!](http://blog.dirac.io/2017/01/11/get_started_sde.html)
+
+## Future native setup?
+
+I would love to provide a native (non-dockery) setup, but as of right now (March the 2nd, 2017) I haven't been able to reliably get SourceKit binaries, which are needed for the fully native setup. If you can provide any counsel, feel free to put up an Issue: **I'm all ears!**
+
+## Credits and sources
+
+Many, many credits go to the work of the awesome Jin Mingjian. I'm but a novice who knows how to use google properly :P
+
+He helped me substantially trying to debug my attempts at compiling and linking the libraries of the Swift 3.1 toolchain and also explained me many concepts and properties of the Toolchain and of his own projects. Thank you very much Jin!
+
+Now that we're at it, I used his work from his [SDE](https://github.com/jinmingjian/sde) and [Source Kite](https://github.com/jinmingjian/sourcekite) projects, and his [demos](https://github.com/jinmingjian/sde-demos).
+
+Much love to the Swift Team and to the community, at [swift.org](https://swift.org/) and at [the Swift repository](https://github.com/apple/swift), because they make Swift possible of course.
+
+And lastly, thanks to the [Docker](https://www.docker.com/) people who made this setup possible.
+
+I made the scripts, and I give them to the public domain. Use them as you wish.
