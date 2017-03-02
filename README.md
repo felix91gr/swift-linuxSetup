@@ -1,7 +1,7 @@
 # Swift@Linux Setup
 _Shell Scripts and instructions on how to set up Swift on Linux._
 
-**TODO: change toolkit to toolchain, proofreading.**
+**TODO: proofreading.**
 
 Follow the Steps:
 

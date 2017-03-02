@@ -20,10 +20,10 @@ rm -rf $TARNAME.tar.gz
 
 PATHTOSWIFT=$(pwd)/$FOLDERNAME/usr/bin
 
-echo Path to Swift toolkit: $PATHTOSWIFT
+echo Path to Swift toolchain: $PATHTOSWIFT
 
 hash swift 2>/dev/null || { 
-  echo 'Could not find Swift Toolkit. Setting it in PATH...'
+  echo 'Could not find Swift Toolchain. Setting it in PATH...'
   echo PATH=$PATH:$PATHTOSWIFT >> ~/.bashrc
   echo export PATH >> ~/.bashrc
 }
