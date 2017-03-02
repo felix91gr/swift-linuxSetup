@@ -9,7 +9,7 @@ Follow the Steps:
 
 These scripts are intended for use in Ubuntu 16.04. If you're **not running 16.04 or a derivative, you've been warned.**
 
-Apart from running Ubuntu 16.04, you'll need `git`. Open your Terminal (Ctrl + Alt + T) and run:
+Apart from running Ubuntu 16.04, you'll need `git`. Open your Terminal (`Ctrl + Alt + T`) and run:
 
 ```bash
 
@@ -48,7 +48,7 @@ For that, run the next script:
 ./S_3.1_Toolchain.sh
 
 ```
-Now you should be able to use the Swift REPL (interactive Swift terminal). Test it, closing the current terminal and opening a new one:
+Now you should be able to use the `Swift REPL` (interactive Swift terminal). Test it, closing the current terminal, then opening a new one and running:
 
 ```bash
 
@@ -89,7 +89,7 @@ But first, we'll have to install and configure Docker. For that, run:
 ./DockerSetup.sh
 
 ```
-If it worked, you should see the output of the hello-world docker command. If it did work, you should now log out and log back in to manifest the changes in your user privileges. 
+If it worked, you should see the output of the `hello-world` docker command. If it did work, you should now log out and log back in to manifest the changes in your user privileges. 
 
 *Basically, you won't need the __sudo__ keyword to use docker commands*
 
@@ -97,7 +97,7 @@ If it worked, you should see the output of the hello-world docker command. If it
 
 **Source Kite** is the backend for SDE. It allows SDE to interface with the SourceKit libraries provided by the Swift toolchain. [Here](https://github.com/jinmingjian/sourcekite) you can look at the sourcecode.
 
-But for this tutorial, we'll use a docker image of Source Kite that Jin made available (Thank you Jin! You're the best ^o^). To download and test it, run:
+But for this tutorial, we'll use a [docker image of Source Kite](https://hub.docker.com/r/jinmingjian/docker-sourcekite/) that Jin made available (Thank you Jin! You're the best ^o^). To download and test it, run:
 
 ```bash
 ./SourceKiteFromDocker.sh
@@ -105,15 +105,15 @@ But for this tutorial, we'll use a docker image of Source Kite that Jin made ava
 
 ### 3.3) Install VSCode and SDE
 
-We're almost there! All that is left of the scripts is to set up apt-get to **download and update VSCode** from the repositories (thanks to [these people](https://github.com/Microsoft/vscode/issues/2973) for making it so easy!). After that, you'll only have to download and configure the SDE plugin in VSCode
+We're almost there! All that is left of the scripts is to set up `apt-get` to **download and update VSCode** from the repositories (thanks to [these people](https://github.com/Microsoft/vscode/issues/2973) for making it so easy!). After that, you'll only have to download and configure the SDE plugin in VSCode.
 
-For VSCode, run:
+For installing VSCode, run:
 
 ```bash
 ./InstallVSCode.sh
 ```
 
-After installing it, open VSCode.
+After installing it, open it:
 
 ![vscodeFromLauncher](assets/VSCode_before.png)
 
@@ -136,7 +136,7 @@ We have to tell SDE two things:
 * That we are using Source Kite from Docker
 * Where is the swift compiler binary located
 
-To do so, in VSCode go to: File => Preferences => Settings. This will open up an empty JSON file:
+To do so, in VSCode go to: `File` => `Preferences` => `Settings`. This will open up an empty `JSON` file:
 
 ![userSettings](assets/UserSettings1.png)
 
@@ -147,7 +147,7 @@ Inside the brackets, insert the following: *(replace as needed for your folders)
     "swift.path.swift_driver_bin":"/home/felix/swift-linuxSetup/swift-binaries/usr/bin/swift"
 ```
 
-After that, save it (Ctrl + S) and close it.
+After that, save it (`Ctrl + S`) and close it.
 
 ## Now test it!
 
