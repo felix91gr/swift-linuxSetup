@@ -1,7 +1,7 @@
 # Swift@Linux Setup
 _Shell Scripts and instructions on how to set up Swift on Linux._
 
-**TODO: vscode apt get issue link, script naming, change toolkit to toolchain.**
+**TODO: gif of awesome SDE, change toolkit to toolchain, proofreading.**
 
 Follow the Steps:
 
@@ -29,11 +29,11 @@ With that, you're ready to start with the *real* setup.
 
 ## 1) Basic dependencies
 
-You'll need certain **dependencies** to install the Swift Toolchain. To have them, run the script Prereq.sh and that's it:
+You'll need certain **dependencies** to install the Swift Toolchain. To have them, run the `BasicSwiftDependencies.sh` script and that's it:
 
 ```bash
 
-./Prereq.sh
+./BasicSwiftDependencies.sh
 
 ```
 
@@ -45,7 +45,7 @@ For that, run the next script:
 
 ```bash
 
-./Alternative-Compiler.sh
+./S_3.1_Toolchain.sh
 
 ```
 Now you should be able to use the Swift REPL (interactive Swift terminal). Test it, closing the current terminal and opening a new one:
@@ -86,7 +86,7 @@ But first, we'll have to install and configure Docker. For that, run:
 
 ```bash
 
-./DockerAndSourceKite.sh
+./DockerSetup.sh
 
 ```
 If it worked, you should see the output of the hello-world docker command. If it did work, you should now log out and log back in to manifest the changes in your user privileges (*basically, you won't need the __sudo__ keyword to use docker commands*)
@@ -103,7 +103,7 @@ But for this tutorial, we'll use a docker image of Source Kite that Jin made ava
 
 ### 3.3) Install VSCode and SDE
 
-We're almost there! All that is left of the scripts is to set up apt-get to download and update VSCode from the repositories (thanks to [these people](link)). After that, you'll only have to download and configure the SDE plugin in VSCode
+We're almost there! All that is left of the scripts is to set up apt-get to download and update VSCode from the repositories (thanks to [these people](https://github.com/Microsoft/vscode/issues/2973)). After that, you'll only have to download and configure the SDE plugin in VSCode
 
 For VSCode, run:
 
@@ -117,13 +117,13 @@ After installing it, open VSCode.
 
 Click in extensions:
 
-![]()
+![clickInExt](assets/VSCode_extensions1.png)
 
 Search for "sde" and install it:
 
-![]()
+![searchForSDE](assets/VSCode_extensions2.png)
 
-And click "Reload" to reload the current window and activate SDE.
+Then, click "Reload" to reload the current window and activate SDE.
 
 That's it! Now all that is left is to configure SDE for our setup, and you'll have a working Swift IDE!
 
@@ -136,7 +136,7 @@ We have to tell SDE two things:
 
 To do so, in VSCode go to: File => Preferences => Settings. This will open up an empty JSON file:
 
-![User Settings img](bleh)
+![userSettings](UserSettings1.png)
 
 Inside the brackets, insert the following: *(replace as needed for your folders)*
 
@@ -147,9 +147,9 @@ Inside the brackets, insert the following: *(replace as needed for your folders)
 
 After that, save it (Ctrl + S) and close it.
 
-## \*) Test it!
+## Now test it!
 
-Let's try SDE! You can use your own project, or the [example project](https://github.com/jinmingjian/sde-demos) provided by Jin for SDE.
+Try SDE! You can use your own project, or the [example project](https://github.com/jinmingjian/sde-demos) provided by Jin for SDE.
 
 * Open the folder in VSCode: File => Open Folder
 
@@ -175,12 +175,12 @@ I would love to provide a native (non-dockery) setup, but as of right now (March
 
 Many, many credits go to the work of the awesome Jin Mingjian. I'm but a novice who knows how to use google properly :P
 
-He helped me substantially trying to debug my attempts at compiling and linking the libraries of the Swift 3.1 toolchain and also explained me many concepts and properties of the Toolchain and of his own projects. Thank you very much Jin!
+He helped me substantially trying to debug my attempts at compiling and linking the libraries of the Swift 3.1 toolchain. He also explained me many concepts and properties of it, and of his own projects. Thank you very much Jin!
 
-Now that we're at it, I used his work from his [SDE](https://github.com/jinmingjian/sde) and [Source Kite](https://github.com/jinmingjian/sourcekite) projects, and his [demos](https://github.com/jinmingjian/sde-demos).
+Now that we're at it, I used the work from his [SDE](https://github.com/jinmingjian/sde) and [Source Kite](https://github.com/jinmingjian/sourcekite) projects, and his [demos](https://github.com/jinmingjian/sde-demos).
 
-Much love to the Swift Team and to the community, at [swift.org](https://swift.org/) and at [the Swift repository](https://github.com/apple/swift), because they make Swift possible of course.
+Much love to the Swift Team and to the community, at [swift.org](https://swift.org/) and at [the Swift repository](https://github.com/apple/swift), because they make Swift possible :heart:
 
-And lastly, thanks to the [Docker](https://www.docker.com/) people who made this setup possible.
+And lastly, thanks to the [Docker](https://www.docker.com/) people, who made this setup possible.
 
-I made the scripts, and I give them to the public domain. Use them as you wish.
+I made the scripts, and I give them to the public domain. **Use them as you wish.**
