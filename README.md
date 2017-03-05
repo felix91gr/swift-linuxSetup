@@ -87,7 +87,7 @@ But first, we'll have to install and configure Docker. For that, run:
 ./DockerSetup.sh
 
 ```
-If it worked, you should see the output of the `hello-world` docker command. If it did work, you should now log out and log back in to manifest the changes in your user privileges. 
+If it worked, you should see the output of the `hello-world` docker command. If it did work, you should now log out and log back in to manifest the changes in your user privileges. *(If that doesn't work, you might actually have to __reboot__ for it to take effect).*
 
 *Basically, you won't need the __sudo__ keyword to use docker commands*
 
