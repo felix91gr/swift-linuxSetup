@@ -1,0 +1,85 @@
+##########################################################################################
+[preset: prepass]#########################################################################
+##########################################################################################
+build-subdir=2pass
+jobs=1
+release
+lldb
+llbuild
+libdispatch
+swiftpm
+xctest
+foundation
+# These might be the options that kill it before it has libdispatch...
+#extra-cmake-options="-DSWIFT_BUILD_SOURCEKIT:BOOL=ON -DSWIFT_TOOL_SOURCEKITD_REPL_BUILD=1"
+
+dash-dash
+ 
+swift-install-components=autolink-driver;compiler;clang-builtin-headers;stdlib;sdk-overlay;license;tools
+#build-swift-static-stdlib=1
+# modify installable-package to fit your need
+install_destdir=/2p/linux/swift-git/output
+installable_package=/2p/linux/swift-git/swift-git-snapshot.tar.gz
+
+install-swift
+install-lldb
+install-cmark
+install-llbuild
+install-libdispatch
+install-swiftpm
+install-xctest
+install-foundation
+reconfigure
+
+#use-gold-linker
+skip-test-cmark
+skip-test-lldb
+skip-test-swift 
+skip-test-llbuild
+skip-test-swiftpm
+skip-test-xctest 
+skip-test-foundation
+skip-test-libdispatch
+skip-test-linux
+##########################################################################################
+[preset: postpass]#########################################################################
+##########################################################################################
+build-subdir=2pass
+jobs=1
+release
+lldb
+llbuild
+libdispatch
+swiftpm
+xctest
+foundation
+extra-cmake-options="-DSWIFT_BUILD_SOURCEKIT:BOOL=ON -DSWIFT_TOOL_SOURCEKITD_REPL_BUILD=1"
+
+dash-dash
+ 
+swift-install-components=autolink-driver;compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-inproc;tools
+#build-swift-static-stdlib=1
+# modify installable-package to fit your need
+install_destdir=/2p/linux/swift-git/output
+installable_package=/2p/linux/swift-git/swift-git-snapshot.tar.gz
+
+install-swift
+install-lldb
+install-cmark
+install-llbuild
+install-libdispatch
+install-swiftpm
+install-xctest
+install-foundation
+reconfigure
+
+#use-gold-linker
+skip-test-cmark
+skip-test-lldb
+skip-test-swift 
+skip-test-llbuild
+skip-test-swiftpm
+skip-test-xctest 
+skip-test-foundation
+skip-test-libdispatch
+skip-test-linux
