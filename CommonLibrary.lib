@@ -8,3 +8,20 @@ function pause(){
    read -p "$*"
 }
 
+function notify-me() {
+
+    if [ -z ${CHAT_ID+x} ] || [ -z ${BOT_TOKEN+x} ]; then 
+        echo "CHAT_ID or BOT_TOKEN are unset. Set them in order to use a Telegram Bot for notifications ^u^. (See the README)" 
+    else 
+        TEXT=$@    
+
+        CHATID=$CHAT_ID
+        KEY=$BOT_TOKEN
+        
+        TIME="10"
+        URL="https://api.telegram.org/bot$KEY/sendMessage"
+
+        curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT" $URL >/dev/null 
+    fi
+}
+
