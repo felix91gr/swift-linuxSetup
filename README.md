@@ -1,4 +1,9 @@
 # Swift@Linux Setup
+
+**WARNING** This page is **outdated**. The last time I tested it was around Swift 3.0 and things have moved on since. Be careful with what you run in your computer. Until this is updated, I recommend not running it at all.
+
+
+
 _Shell Scripts and instructions on how to set up Swift on Linux._
 
 Follow the Steps:
